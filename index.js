@@ -301,7 +301,7 @@ close.addEventListener("click", () => {
   modal.classList.remove("visible");
 
   // Stop and reinsert video when closed
-  // Not the most efficient because every time you open the modal back up the iframe has to reload. However, this is a quick solution for a small project. Recommend using (https://developers.google.com/youtube/iframe_api_reference)
+  /* Not the most efficient because every time you open the modal back up the iframe has to reload. However, this is a quick solution for a small project. Recommend using (https://developers.google.com/youtube/iframe_api_reference)*/
   let video = youtube.getAttribute("src");
   youtube.setAttribute("src", "");
   youtube.setAttribute("src", video);

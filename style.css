@@ -189,12 +189,11 @@ nav span {
   height: 100%;
 }
 
-@media (max-device-width: 900px) and (orientation: landscape) {
+@media (max-device-width: 1200px) and (orientation: landscape) {
   .modal {
     padding-top: 0;
   }
   .video-container iframe {
-    width: 100vh;
     height: 100vh;
   }
 }

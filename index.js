@@ -1,3 +1,4 @@
+// Data
 const movies = [
   {
     id: "JerVrbLldXw",
@@ -251,7 +252,7 @@ const movies = [
     runtime: "2h 9m",
   },
 ];
-// Data ^
+// End Data
 
 // Create movie boxes
 const container = document.createElement("div");

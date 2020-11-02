@@ -291,6 +291,7 @@ modalLinks.forEach((modalLink) => {
     const modalId = trigger.getAttribute("id");
     youtube.setAttribute("src", `https://www.youtube.com/embed/${modalId}`);
     modal.classList.add("visible");
+    console.log(modalLink);
   });
 });
 
@@ -298,10 +299,19 @@ modalLinks.forEach((modalLink) => {
 const close = document.querySelector(".close");
 close.addEventListener("click", () => {
   modal.classList.remove("visible");
+
+  // Stop and reinsert video when closed
+  // Not the most efficient because every time you open the modal back up the iframe has to reload. However, this is a quick solution for a small project. Recommend using (https://developers.google.com/youtube/iframe_api_reference)
+  let video = youtube.getAttribute("src");
+  youtube.setAttribute("src", "");
+  youtube.setAttribute("src", video);
 });
 
 window.addEventListener("click", (e) => {
   if (e.target == modal) {
     modal.classList.remove("visible");
+    let video = youtube.getAttribute("src");
+    youtube.setAttribute("src", "");
+    youtube.setAttribute("src", video);
   }
 });
